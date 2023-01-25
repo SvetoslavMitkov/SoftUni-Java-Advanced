@@ -35,3 +35,11 @@ map.values() -> връща списък с всички value на записи�
  List<String> sortedRacers = racersMap.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(3).map(Map.Entry::getKey).collect(Collectors.toList());
+
+сортиране със стрийм - сортира по всеки два елемента
+.stream().sorted((left, right) -> left(стойност) - right(стойност)    - ascending order - от най-малко към най-голямо
+					-> right(стойност) - left(стойност)     - descending order - от най-голямо към най-малко
+при изваждането ако резултата е >0 се разместват, ако не си остават
+може да се използва и компаратор
+
+Judge не приема stream().toList() - вместо това => stream().collect(Collectors.toList())
